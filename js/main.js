@@ -20,7 +20,8 @@
             var img = new Image();
 
             $('html').css({
-                'background-image': 'url(' + this.image() + ')'
+                'background-image': 'url(' + this.image() + ')',
+                'display': 'block'
             });
 
             $(img).attr('src', this.image()).
