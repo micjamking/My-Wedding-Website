@@ -29,8 +29,10 @@
             }
             .container {
                 padding: 0 20px;
-                position: absolute;
                 width: 100%;
+            }
+            .main{
+                margin-top: -301px;
             }
             canvas {
                 padding:0;
@@ -40,6 +42,9 @@
                 position:fixed;
                 left:0;
                 top:0;
+            }
+            img{
+                display: none;
             }
         </style>
     </head>
@@ -59,6 +64,8 @@
                 <footer>We're so excited to share our special day with our friends and family! Details soon to come.</footer>
             </div>
         </div>
+
+        <img src="../img/homepage.png" alt="Ashley & Mikes Wedding" />
 
         <canvas id="sakura"></canvas>
 
@@ -1159,12 +1166,13 @@
             setTimeout(function(){ $('html').fadeIn(1000); }, 100);
         </script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+         -->
     </body>
 </html>

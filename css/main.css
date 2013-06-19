@@ -107,7 +107,7 @@ textarea {
 
 }
 
-@font-face {
+/*@font-face {
     font-family: 'Lavanderia';
     src: url('../fonts/lavanderia/lavanderia_delicate-webfont.eot');
     src: url('../fonts/lavanderia/lavanderia_delicate-webfont.eot?#iefix') format('embedded-opentype'),
@@ -117,7 +117,7 @@ textarea {
     font-weight: 300;
     font-style: normal;
 
-}
+}*/
 
 @font-face {
     font-family: 'Lavanderia';
@@ -153,7 +153,6 @@ html, body {
 }
 
 html { 
-    background-image: url(../img/hawaii-beach-medium.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -168,7 +167,7 @@ html {
 
 .main {
     position: relative;
-    top: 50px;
+    top: 30px;
     background-color: rgba(0,0,0, 0.5);
     margin: 0 auto 50px;
     width: 90%;
@@ -277,6 +276,10 @@ footer {
     }
 
     .main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: 0 0 0 -260px;
         width: 400px;
         padding: 60px;
     }
@@ -327,7 +330,7 @@ footer {
     }
 }
 
-.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-delay:0.75s;animation-delay:0.75s;}
+.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}
 
 .animated.hinge{-webkit-animation-duration:2s;-moz-animation-duration:2s;-ms-animation-duration:2s;-o-animation-duration:2s;animation-duration:2s;}
 
