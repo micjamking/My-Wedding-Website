@@ -17,11 +17,11 @@
 
         init: function(){
 
-            var img = new Image();
+            var img = new Image(),
+            FIREFOX = /Firefox/i.test(navigator.userAgent);
 
             $('html').css({
-                'background-image': 'url(' + this.image() + ')',
-                'display': 'block'
+                'background-image': 'url(' + this.image() + ')'
             });
 
             $(img).attr('src', this.image()).
@@ -31,6 +31,11 @@
                     window.scrollTo(0,1);
 
                     setTimeout(function(){
+
+                        if (FIREFOX) {            
+                            $('html').css({'display': 'block'});
+                        }
+
                         $('html').fadeIn(1000, function(){
                             Main.setMargin(false);
                         });
