@@ -16,28 +16,33 @@
         },
 
         init: function(){
+
+            var img = new Image();
+
             $('html').css({
                 'background-image': 'url(' + this.image() + ')'
             });
 
-            setTimeout(function(){
-
-                window.scrollTo(0,1);
-
+            $(img).attr('src', this.image()).
+            on("load", function(){
                 setTimeout(function(){
 
-                    $('html').fadeIn(1000, function(){
-                        Main.setMargin(false);
-                    });
+                    window.scrollTo(0,1);
 
-                }, 100);
-            }, 0);
+                    setTimeout(function(){
+                        $('html').fadeIn(1000, function(){
+                            Main.setMargin(false);
+                        });
+
+                    }, 100);
+                }, 0);
+            });
         }
 
     };
 
     var Main = {
-        
+
         mql: window.matchMedia("(min-width: 561px)"),
 
         marginTop: function() {
