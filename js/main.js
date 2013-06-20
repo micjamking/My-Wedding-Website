@@ -3,10 +3,10 @@
     var Background = {
 
         bgImage: [
-            '../img/hawaii-beach-medium.jpg',
-            '../img/bowling-ball-beach.jpg',
-            '../img/dreamland.jpg',
-            '../img/falling-hearts.png'
+            '../img/hawaii-beach',
+            '../img/bowling-ball-beach',
+            '../img/dreamland',
+            '../img/falling-hearts'
         ],
 
         image: function(){
@@ -15,33 +15,55 @@
             ];
         },
 
+        imageSize: function(){
+
+            var size,
+                width = $(window).width();
+
+            if (width > 1280){ size = 'x-large'; } 
+            else if (width > 768){ size = 'large'; } 
+            else if (width > 480){ size = 'medium'; } 
+            else { size = 'small'; }
+
+            return size;
+        },
+
         init: function(){
 
-            var img = new Image(),
-            FIREFOX = /Firefox/i.test(navigator.userAgent);
+            var fake    = new Image(),
+                image   = this.image() + '-';
+                FIREFOX = /Firefox/i.test(navigator.userAgent);
 
             $('html').css({
-                'background-image': 'url(' + this.image() + ')'
+                'background-image': 'url(' + image + this.imageSize() + '.jpg' + ')'
             });
 
-            $(img).attr('src', this.image()).
-            on("load", function(){
+            $(fake).attr('src', image + this.imageSize() + '.jpg').on("load", function(){
+
                 setTimeout(function(){
 
                     window.scrollTo(0,1);
 
                     setTimeout(function(){
 
-                        if (FIREFOX) {            
+                        if (FIREFOX) {
                             $('html').css({'display': 'block'});
                         }
 
                         $('html').fadeIn(1000, function(){
+
                             Main.setMargin(false);
                         });
 
                     }, 100);
                 }, 0);
+            });
+
+            $(window).resize(function(){
+
+                $('html').css({
+                    'background-image': 'url(' + image + Background.imageSize() + '.jpg' + ')'
+                });
             });
         }
 
@@ -62,11 +84,10 @@
 
         setMargin: function(bool){
 
-            if (bool){
-                $('.main').css({ 'margin-top': this.mql.matches ? this.marginTop() : '0px' });
-            } else {
-                $('.main').css({ 'margin-top': this.mql.matches ? this.marginTop() : '0px' }).
-                addClass('fadeInDownBig');
+            $('.main').css({ 'margin-top': this.mql.matches ? this.marginTop() : '0px' });
+
+            if (!bool){
+                $('.main').addClass('fadeInDownBig');
             }
         },
 
