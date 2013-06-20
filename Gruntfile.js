@@ -92,6 +92,7 @@ module.exports = function(grunt) {
                     dest: 'dist',
 					src: [
 						'js/vendor/modernizr-*.js',
+                        'apple-touch-icon-*.png',
 						'*.{ico,txt}',
 						'.htaccess',
 						'fonts/**/*',
