@@ -25,13 +25,16 @@ module.exports = function(grunt) {
 			},
 			js: {
 				src: [
-                    'js/main.js',
-					'js/vendor/jquery-2.0.0.js'
+                    'js/vendor/jquery-2.0.0.min.js',
+                    'js/main.js'
 				],
 				dest: 'dist/js/.tmp/script.js'
 			},
 			css: {
-				src: [ 'css/{,*/}*.css' ],
+				src: [ 
+                    'css/normalize.css',
+                    'css/main.css'
+                ],
 				dest: 'dist/css/.tmp/style.css'
 			}
 		},
