@@ -25,8 +25,8 @@ module.exports = function(grunt) {
 			},
 			js: {
 				src: [
-					'js/vendor/jquery-2.0.0.js',
-					'js/main.js'
+                    'js/main.js',
+					'js/vendor/jquery-2.0.0.js'
 				],
 				dest: 'dist/js/.tmp/script.js'
 			},
