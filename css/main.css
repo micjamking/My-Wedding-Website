@@ -161,10 +161,6 @@ html {
     display: none;
 }
 
-html.ie{
-    display: block;
-}
-
 .container {
     padding: 0 20px;
 }
@@ -191,6 +187,10 @@ h1 {
     font-size: 60px;
     font-weight: 100;
     position: relative;
+}
+
+h1 .ampersand{
+    display: none;
 }
 
 h1:after {
@@ -258,7 +258,8 @@ h2:after{
     width: 53%;
 }
 
-footer {
+.footer {
+    display: block;
     font-family: 'Open Sans', sans-serif;
     font-size: 10px;
     color: white;
@@ -328,7 +329,7 @@ footer {
         width: 42%;
     }
 
-    footer {
+    .footer {
         font-size: 12px;
         width: 62%;
     }
@@ -580,4 +581,35 @@ footer {
     h3 {
         page-break-after: avoid;
     }
+}
+
+/* ==========================================================================
+   IE issues
+   ========================================================================== */
+
+html.ie, html.lt-ie9{
+    background-image: url('../img/hawaii-beach-x-large.jpg');
+    display: block;
+}
+
+.ie .main, .lt-ie9 .main{
+    background:transparent;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000); 
+    zoom: 1;
+    opacity: 0.5;
+    position: relative;
+    top: 30px;
+}
+
+.ie h1, .lt-ie9 h1,
+.ie h2, .lt-ie9 h2 {
+    width: inherit;
+}
+
+.lt-ie9 h1 .ampersand{
+    display: inline;
+}
+
+.lt-ie9 h1:after{
+    display: none;
 }
