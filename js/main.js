@@ -3,10 +3,10 @@
     var Background = {
 
         bgImage: [
-            '../img/hawaii-beach',
-            '../img/bowling-ball-beach',
-            '../img/dreamland',
-            '../img/falling-hearts'
+            'img/hawaii-beach',
+            'img/bowling-ball-beach',
+            'img/dreamland',
+            'img/falling-hearts'
         ],
 
         image: function(){
