@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 				dest: 'dist/js/.tmp/script.js'
 			},
 			css: {
-				src: [ 
+				src: [
                     'css/normalize.css',
                     'css/main.css'
                 ],
