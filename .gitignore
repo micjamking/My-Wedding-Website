@@ -1,0 +1,15 @@
+# Ignore patterns for Mike & Ashley's Wedding Website
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+node_modules
+dist
+.tmp
+.sass-cache
+app/components

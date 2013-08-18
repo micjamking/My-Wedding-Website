@@ -1,0 +1,20 @@
+{
+  "name": "Mike-and-Ashleys-Wedding",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "sass-bootstrap": "~2.3.0",
+    "requirejs": "~2.1.4",
+    "modernizr": "~2.6.2",
+    "fitvids": "~1.0.3",
+    "isotope": "~1.5.25",
+    "magnific-popup": "~0.9.3",
+    "jquery-cycle2": "*",
+    "jquery-form": "~3.37.0",
+    "jquery-validation": "git@github.com:jzaefferer/jquery-validation.git#~1.11.1",
+    "jquery-quovolver": "git@github.com:sebnitu/Quovolver.git#~2.0.2",
+    "jquery-tweet": "git@github.com:StanScates/Tweet.js-Mod.git",
+    "gmap3": "~5.1.1"
+  },
+  "devDependencies": {}
+}
