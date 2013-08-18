@@ -1,3 +1,6 @@
+/*global jQuery */
+'use strict';
+
 (function($){
 
     var Background = {
@@ -20,9 +23,9 @@
             var size,
                 width = $(window).width();
 
-            if (width > 1280){ size = 'x-large'; } 
-            else if (width > 768){ size = 'large'; } 
-            else if (width > 480){ size = 'medium'; } 
+            if (width > 1280){ size = 'x-large'; }
+            else if (width > 768){ size = 'large'; }
+            else if (width > 480){ size = 'medium'; }
             else { size = 'small'; }
 
             return size;
@@ -31,14 +34,14 @@
         init: function(){
 
             var fake    = new Image(),
-                image   = this.image() + '-';
+                image   = this.image() + '-',
                 FIREFOX = /Firefox/i.test(navigator.userAgent);
 
             $('html').css({
                 'background-image': 'url(' + image + this.imageSize() + '.jpg' + ')'
             });
 
-            $(fake).attr('src', image + this.imageSize() + '.jpg').on("load", function(){
+            $(fake).attr('src', image + this.imageSize() + '.jpg').on('load', function(){
 
                 setTimeout(function(){
 
@@ -71,7 +74,7 @@
 
     var Main = {
 
-        mql: window.matchMedia("(min-width: 561px)"),
+        mql: window.matchMedia('(min-width: 561px)'),
 
         marginTop: function() {
 
