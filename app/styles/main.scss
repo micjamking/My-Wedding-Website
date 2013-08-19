@@ -1,17 +1,28 @@
-$iconSpritePath: "../images/glyphicons-halflings.png";
-$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+$iconSpritePath: '../images/glyphicons-halflings.png';
+$iconWhiteSpritePath: '../images/glyphicons-halflings-white.png';
 
 /* Vendors */
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'sass-bootstrap/lib/responsive';
+@import 'compass/css3';
 @import 'vendor/leviate';
-@import 'vendor/magnific-popup'
+@import 'vendor/magnific-popup';
 
 /* Base */
+@import 'base/colors';
+@import 'base/buttons';
 @import 'base/typography';
 
 
 /* Modules */
+@import 'modules/aside';
+@import 'modules/footer';
+@import 'modules/forms';
+@import 'modules/header';
+@import 'modules/maps';
+@import 'modules/newsletter';
+@import 'modules/sections';
+@import 'modules/slider';
 
 
 /* Partials */

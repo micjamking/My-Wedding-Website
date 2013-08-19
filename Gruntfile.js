@@ -26,12 +26,8 @@ module.exports = function (grunt) {
 		yeoman: yeomanConfig,
 		watch: {
 			compass: {
-				files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+				files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}'],
 				tasks: ['compass:server']
-			},
-			styles: {
-				files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-				tasks: ['copy:styles']
 			},
 			livereload: {
 				options: {
@@ -175,7 +171,7 @@ module.exports = function (grunt) {
 						'<%= yeoman.dist %>/scripts/{,*/}*.js',
 						'<%= yeoman.dist %>/styles/{,*/}*.css',
 						'<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-						'<%= yeoman.dist %>/fonts/*'
+						'<%= yeoman.dist %>/fonts/{,*/}*.{eot,svg,ttf,woff}'
 					]
 				}
 			}
@@ -262,29 +258,17 @@ module.exports = function (grunt) {
 						'*.{ico,png,txt}',
 						'.htaccess',
 						'images/{,*/}*.{webp,gif}',
-						'fonts/*'
+						'fonts/{,*/}*.{eot,svg,ttf,woff}'
 					]
 				}]
-			},
-			styles: {
-				expand: true,
-				dot: true,
-				cwd: '<%= yeoman.app %>/styles',
-				dest: '.tmp/styles/',
-				src: '{,*/}*.css'
 			}
 		},
 		concurrent: {
 			server: [
-				'compass',
-				'copy:styles'
-			],
-			test: [
-				'copy:styles'
+				'compass'
 			],
 			dist: [
 				'compass',
-				'copy:styles',
 				'imagemin',
 				'svgmin',
 				'htmlmin'
@@ -316,7 +300,6 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('test', [
 		'clean:server',
-		'concurrent:test',
 		'connect:test',
 		'mocha'
 	]);
@@ -328,7 +311,7 @@ module.exports = function (grunt) {
 		'requirejs',
 		'concat',
 		'cssmin',
-		'uglify',
+		//'uglify',
 		'copy:dist',
 		'rev',
 		'usemin'

@@ -123,7 +123,32 @@ require.config({
 			exports: 'jquery'
 		},
 		leviate: {
-			deps: ['jquery', 'leviatePlugins', 'leviateParallax'],
+			deps: [
+				'jquery',
+				'leviatePlugins',
+				'leviateParallax',
+				'fitvids',
+				'isotope',
+				'quovolver',
+				'form',
+				'validate',
+				'recaptcha',
+				'gmap3',
+				'flickr',
+				'tweet',
+				'cycle2Core',
+				'cycle2Autoheight',
+				'cycle2Caption',
+				'cycle2Command',
+				'cycle2Hash',
+				'cycle2Loader',
+				'cycle2Pager',
+				'cycle2Prevnext',
+				'cycle2Progressive',
+				'cycle2Tmpl',
+				'cycle2Swipe'
+
+			],
 			exports: 'jquery'
 		}
 	}
@@ -156,11 +181,11 @@ require([
 	'cycle2Swipe',
 	'leviatePlugins',
 	'leviateParallax',
-	'leviate',
+	'leviate'
 ],
 function (app, $) {
 	'use strict';
-	// use app here
-	//console.log(app);
-	//console.log('Running jQuery %s', $().jquery);
+
+	app.init();
+	console.log('Running jQuery %s', $().jquery);
 });

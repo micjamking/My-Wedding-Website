@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Slider
+   ========================================================================== */
+
+
+.slider-block .slide-wrap .caption {
+	.slide-link {
+		display: block;
+		margin-top: 0;
+		font-family: 'Abe';
+		font-size: 24px;
+		color: rgba(255, 255, 255, 0.75);
+
+		@media only screen and (min-width: 481px){
+			font-size: 36px;
+		}
+
+		@media only screen and (min-width: 769px){
+			display: inline;
+			font-size: 48px;
+
+			&.left{
+				margin-right: 20px;
+			}
+
+			&.right{
+				margin-left: 10px;
+			}
+		}
+	}
+
+	&.hawaii .slide-link {
+		font-family: 'Lavanderia';
+		font-size: 21px;
+
+		@media only screen and (min-width: 481px){
+			font-size: 28px;
+		}
+
+		@media only screen and (min-width: 769px){
+			display: block;
+			font-size: 36px;
+
+			&.left{
+				margin-right: 0px;
+			}
+
+			&.right{
+				margin-left: 0px;
+			}
+		}
+	}
+
+	&.hawaii .slide-text {
+
+		img {
+
+			@media only screen and (min-width: 768px){
+				margin: 20px 0;
+			}
+		}
+	}
+}
+
+.slider {
+
+	.slide-text {
+
+		img {
+			width: 3.33333333333333em;
+			height: 3.33333333333333em;
+			@include border-radius(246px);
+			@include box-shadow(0px 0px 0px 8px rgba(255,255,255,0.5));
+			@include transition(all .25s ease);
+
+			@media only screen and (max-width: 768px){
+				margin: 20px 0;
+			}
+		}
+
+		img:hover {
+			@include transform(scale(0.95) rotate(8deg));
+			@include box-shadow(0px 0px 0px 20px rgba(255,255,255,0.5));
+		}
+	}
+
+	.slider-block .slide-wrap .caption .slide-text.image {
+		background: none;
+		background-color: transparent;
+		@include box-shadow(none);
+	}
+}

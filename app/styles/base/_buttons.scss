@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+
+button {
+	@include transition(all 2s ease);
+}
+
+.btn-primary {
+	border: 0;
+	padding: 0 18px;
+	height: 46px;
+	font-size: 18px;
+	text-align: center;
+	line-height: 46px;
+	cursor: pointer;
+	background-color: $blue;
+	color: darken($blue, 15%);
+	@include text-shadow(none);
+	@include transition(all 2s ease);
+
+	&:hover,
+	&:focus,
+	&:active,
+	&.active,
+	&.disabled,
+	&[disabled] {
+		outline: none;
+		background-color: darken($blue, 10%);
+		color: #FFFFFF;
+		@include transition(none);
+	}
+
+	@media only screen and (max-width: 767px){
+		@include box-sizing(border-box);
+		width: 100%;
+		padding: 0 18px;
+	}
+}

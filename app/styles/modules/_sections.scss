@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+
+.section-block h1.section-title {
+	@media only screen and (max-width: 480px){
+		font-size: 32px;
+	}
+}
+
+.lead {
+	line-height: 1.8;
+	margin-bottom: 40px;
+}
+
+.service {
+	margin-bottom: 40px;
+}
+
+
+.honeyfund {
+	margin: 0 auto;
+	text-align: center;
+	background: url('http://www.honeyfund.com/share/honeyfund3.png') no-repeat;
+	display: block;
+	width: 200px;
+	height: 100px;
+	text-indent: -9999em;
+}
+
+.span6 {
+	@media only screen and (max-width: 768px){
+		margin: 50px 0;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+.progress-info.progress-striped .bar,
+.progress-striped .bar-info {
+	background-color: $blue;
+}

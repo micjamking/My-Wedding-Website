@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+	@include border-radius(0);
+	background-color: whitesmoke;
+	border: none;
+	padding: 20px;
+	@include box-shadow(none);
+	@include transition(all 0.25s ease);
+}
+
+.form-actions {
+
+	@media only screen and (max-width: 767px){
+		background-color: transparent;
+	}
+}

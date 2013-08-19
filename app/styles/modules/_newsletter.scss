@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Newsletter
+   ========================================================================== */
+
+#wedding {
+	padding-bottom: 0;
+}
+
+.section-block {
+
+	> .newsletter {
+		padding: 100px 0;
+		background: $black;
+
+		> .container {
+			text-align: center;
+			margin: 0 auto;
+
+			@media only screen and (min-width: 1024px) {
+
+				#newsletter,
+				h3.newsletter,
+				input.newsletter-email,
+				input.newsletter-name,
+				button.newsletter-sent {
+					display: inline-block;
+				}
+			}
+		}
+
+		h2, h3 {
+			color: white;
+		}
+
+		h3.newsletter {
+			margin-right: 20px;
+			vertical-align: top;
+
+			@media only screen and (max-width: 767px) {
+				margin-bottom: 20px;
+			}
+		}
+
+		input.newsletter-email,
+		input.newsletter-name {
+			width:258px;
+			padding:12px;
+			float:left;
+			background:#fff;
+			color:#C4C4C4;
+			font-size:18px;
+			margin-right:20px;
+			margin-top:0;
+			height: inherit;
+			line-height: inherit;
+
+			@media only screen and (max-width: 767px) {
+				width: 100%;
+				margin-bottom:20px;
+				display: block;
+				float: none;
+				@include box-sizing(border-box);
+			}
+
+		}
+
+		button.newsletter-sent {
+			display:inline-block;
+		}
+
+		@media only screen and (max-width: 768px){
+			margin: 0 -40px;
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+
+		@media only screen and (max-width: 480px){
+			margin: 0 -15px;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+}

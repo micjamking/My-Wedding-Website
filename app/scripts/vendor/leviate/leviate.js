@@ -5,6 +5,8 @@
  * This file is part of Leviate, a Minimalist One Page Template build for sale at ThemeForest.
  * For questions, suggestions or support request, please mail me at maimairel@yahoo.com
  *
+ * Modified for Ashley's & Mike's Wedding Website (v1.0)
+ *
  */
 
 ;(function( $, window, document, undefined ) {
@@ -20,7 +22,7 @@
 	$( 'html' ).toggleClass( 'handheld', $.isHandheld );
 
 
-	$( window ).load(function() {
+	$( document ).ready(function() {
 
 		/* ==========================================================================
 			ScrollSpy
@@ -58,18 +60,38 @@
 									center: [ $( this ).data( 'center-lat' ), $( this ).data( 'center-lng' ) ],
 									scrollwheel: false,
 									mapTypeControl: false,
-									streetViewControl: false,
-									styles: [
-										{
-											stylers: [
-												{ saturation: -100 }
-											]
-										}
-									]
+									streetViewControl: false
 								}
 							},
 							marker: {
-								latLng:[ $( this ).data( 'marker-lat' ), $( this ).data( 'marker-lng' ) ]
+								options:{
+									draggable: false,
+									clickable: true
+								},
+								latLng:[
+									$( this ).data( 'marker-lat' ),
+									$( this ).data( 'marker-lng' )
+								],
+								events:{
+									click: function(marker, event, data){
+										var map    = $(this).gmap3('get'),
+										infowindow = new google.maps.InfoWindow();
+										console.log(data);
+
+										if (infowindow){
+											infowindow.open(map, marker);
+											infowindow.setContent(data);
+										} else {
+											$(this).gmap3({
+												action:'addInfoWindow',
+												anchor:marker,
+												options:{
+													content: data
+												}
+											});
+										}
+									}
+								}
 							}
 						};
 
@@ -131,10 +153,6 @@
 				});
 			});
 		}
-
-	});
-
-	$( document ).ready(function() {
 
 		/* ==========================================================================
 			Define easeInOutExpo
