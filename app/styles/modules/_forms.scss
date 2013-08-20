@@ -29,7 +29,17 @@ input[type="color"],
 
 .form-actions {
 
-	@media only screen and (max-width: 767px){
+	@media only screen and (max-width: 768px){
 		background-color: transparent;
+	}
+}
+
+@media only screen and (max-width: 768px){
+	.controls > .span6:first-child{
+		margin-bottom: 0;
+	}
+
+	.controls > .span6:last-child{
+		margin-top: 0;
 	}
 }

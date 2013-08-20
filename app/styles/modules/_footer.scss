@@ -34,13 +34,18 @@
 			display: block;
 			float: left;
 			font-size: 32px;
-			font-weight: 700;
+			font-weight: normal;
 			line-height: 35px;
 			margin-right: 50px;
 			word-wrap: break-word;
 
 			a {
 				word-wrap: break-word;
+
+				@media only screen and (max-width: 480px){
+					font-size: 0.7em;
+					display: block;
+				}
 			}
 
 			@media only screen and (max-width: 768px){

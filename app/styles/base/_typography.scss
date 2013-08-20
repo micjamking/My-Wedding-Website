@@ -1357,6 +1357,7 @@ a {
 	color: $blue;
 	text-decoration: none;
 	@include transition(all 0.25s ease);
+	word-wrap: break-word;
 
 	&:hover,
 	&:focus,
@@ -1368,4 +1369,9 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
+}
+
+p {
+	font-size: 16px;
+	line-height: 1.8;
 }
