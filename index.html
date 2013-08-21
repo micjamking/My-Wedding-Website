@@ -6,6 +6,9 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 
 <head>
+	<!-- Force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
 	<meta charset="utf-8">
 
 	<meta name="author" content="Mike King">
@@ -16,7 +19,7 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<link rel="stylesheet" href="styles/9384e56e.main.css">
+	<link rel="stylesheet" href="styles/a00c7d4a.main.css">
 
 	<script src="scripts/vendor/f7f27360.modernizr.js"></script>
 
@@ -116,7 +119,7 @@
 				<div class="span4">
 					<div class="team">
 						<div class="team-photo">
-							<img src="assets/img/lazy_team.png" data-original="images/slider/bee2882c.avatar_us.v2.png" alt="Mike &amp; Ashley">
+							<img src="images/9eaa0c8c.lazy_team.png" data-original="images/slider/bee2882c.avatar_us.v2.png" alt="Mike &amp; Ashley">
 						</div>
 						<div class="team-info">
 							<span class="name">Mike & Ashley</span>
@@ -732,7 +735,10 @@
 		ga('create','UA-20024456-11');ga('send','pageview');
 	</script>
 
+	<script data-main="scripts/f5035b98.main" src="components/requirejs/require.js"></script>
 
-	<script data-main="scripts/c7c24119.main" src="components/requirejs/require.js"></script>
+	<!--[if IE 9]>
+	<script src="http://malsup.github.io/min/jquery.cycle2.min.js"></script>
+	<![endif]-->
 </body>
 </html>
