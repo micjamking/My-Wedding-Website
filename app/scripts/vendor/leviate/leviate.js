@@ -37,123 +37,6 @@
 			});
 		}
 
-
-		/* ==========================================================================
-			Google Maps
-		============================================================================= */
-		if( $.fn.gmap3 ) {
-			(function() {
-				var wf = document.createElement('script');
-				wf.src = 'http://maps.google.com/maps/api/js?v=3&sensor=false&language=en&callback=load_gmap';
-				wf.type = 'text/javascript';
-				wf.async = 'true';
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(wf, s);
-
-				window.load_gmap = function() {
-					$( '.google-maps' ).each(function() {
-
-						var options = {
-							map: {
-								options: {
-									zoom: $( this ).data( 'zoom' ) || 1,
-									center: [ $( this ).data( 'center-lat' ), $( this ).data( 'center-lng' ) ],
-									scrollwheel: false,
-									mapTypeControl: false,
-									streetViewControl: false
-								}
-							},
-							marker: {
-								options:{
-									draggable: false,
-									clickable: true
-								},
-								latLng:[
-									$( this ).data( 'marker-lat' ),
-									$( this ).data( 'marker-lng' )
-								],
-								events:{
-									click: function(marker, event, data){
-										var map    = $(this).gmap3('get'),
-										infowindow = new google.maps.InfoWindow();
-										console.log(data);
-
-										if (infowindow){
-											infowindow.open(map, marker);
-											infowindow.setContent(data);
-										} else {
-											$(this).gmap3({
-												action:'addInfoWindow',
-												anchor:marker,
-												options:{
-													content: data
-												}
-											});
-										}
-									}
-								}
-							}
-						};
-
-						$( this ).gmap3( options );
-					});
-				}
-			})();
-		}
-
-		/*	--------------------------------------------------------------------
-		Flickr Widget
-		------------------------------------------------------------------------ */
-		if( $.fn.jflickrfeed ) {
-			$( '.flickr-stream' ).each(function() {
-				var flickrId = $( this ).data( 'flickr-id' );
-				var limit = $( this ).data( 'limit' ) || 9;
-				$( document.createElement( 'ul' ) )
-					.prependTo( this ).jflickrfeed({
-						qstrings: {
-							id: flickrId
-						},
-						limit: limit,
-						itemTemplate: '<li><a href="{{link}}" title="{{title}}" target="_blank"><img src="{{image_s}}" alt="{{title}}" /></a></li>'
-					});
-			});
-		}
-
-		/* ==========================================================================
-			Twitter Feed
-		============================================================================= */
-		if( $.fn.tweet ) {
-			$( '.tweets' ).each(function() {
-				var username = $( this ).data( 'twitter-username' );
-				var count = $( this ).data( 'count' ) || 1;
-				$( this ).tweet({
-					modpath: 'http://dev.85pixels.com/twitter/index.php',
-					username: username,
-					template: [
-						'<span class="tweet_header">',
-							'<span class="tweet_avatar">',
-								'<a href="{user_url}"><img src="{avatar_url}" alt="{screen_name}" title="{screen_name}"></a>',
-							'</span>',
-							'<span class="tweet_info">',
-								'<a href="{user_url}" class="tweet_name">{name}</a>',
-								'<a href="{user_url}" class="tweet_user">@{screen_name}</a>',
-							'</span>',
-						'</span>',
-						'{text}{time}',
-						'<span class="tweet_intents">',
-							'<ul>',
-								'<li><a href="{reply_url}" title="Reply">Reply</a></li>',
-								'<li><a href="{retweet_url}" title="Retweet">Retweet</a></li>',
-								'<li><a href="{favorite_url}" title="Favorite">Favorite</a></li>',
-							'</ul>',
-						'</span>'
-					].join( '' ),
-					count: count,
-					loading_text: 'Loading Tweets...'
-				});
-			});
-		}
-
 		/* ==========================================================================
 			Define easeInOutExpo
 		============================================================================= */
@@ -508,6 +391,122 @@
 					}
 				});
 			})();
+		}
+
+		/* ==========================================================================
+			Google Maps
+		============================================================================= */
+		if( $.fn.gmap3 ) {
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = 'http://maps.google.com/maps/api/js?v=3&sensor=false&language=en&callback=load_gmap';
+				wf.type = 'text/javascript';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+
+				window.load_gmap = function() {
+					$( '.google-maps' ).each(function() {
+
+						var options = {
+							map: {
+								options: {
+									zoom: $( this ).data( 'zoom' ) || 1,
+									center: [ $( this ).data( 'center-lat' ), $( this ).data( 'center-lng' ) ],
+									scrollwheel: false,
+									mapTypeControl: false,
+									streetViewControl: false
+								}
+							},
+							marker: {
+								options:{
+									draggable: false,
+									clickable: true
+								},
+								latLng:[
+									$( this ).data( 'marker-lat' ),
+									$( this ).data( 'marker-lng' )
+								],
+								events:{
+									click: function(marker, event, data){
+										var map    = $(this).gmap3('get'),
+										infowindow = new google.maps.InfoWindow();
+										console.log(data);
+
+										if (infowindow){
+											infowindow.open(map, marker);
+											infowindow.setContent(data);
+										} else {
+											$(this).gmap3({
+												action:'addInfoWindow',
+												anchor:marker,
+												options:{
+													content: data
+												}
+											});
+										}
+									}
+								}
+							}
+						};
+
+						$( this ).gmap3( options );
+					});
+				}
+			})();
+		}
+
+		/*	--------------------------------------------------------------------
+		Flickr Widget
+		------------------------------------------------------------------------ */
+		if( $.fn.jflickrfeed ) {
+			$( '.flickr-stream' ).each(function() {
+				var flickrId = $( this ).data( 'flickr-id' );
+				var limit = $( this ).data( 'limit' ) || 9;
+				$( document.createElement( 'ul' ) )
+					.prependTo( this ).jflickrfeed({
+						qstrings: {
+							id: flickrId
+						},
+						limit: limit,
+						itemTemplate: '<li><a href="{{link}}" title="{{title}}" target="_blank"><img src="{{image_s}}" alt="{{title}}" /></a></li>'
+					});
+			});
+		}
+
+		/* ==========================================================================
+			Twitter Feed
+		============================================================================= */
+		if( $.fn.tweet ) {
+			$( '.tweets' ).each(function() {
+				var username = $( this ).data( 'twitter-username' );
+				var count = $( this ).data( 'count' ) || 1;
+				$( this ).tweet({
+					modpath: 'http://dev.85pixels.com/twitter/index.php',
+					username: username,
+					template: [
+						'<span class="tweet_header">',
+							'<span class="tweet_avatar">',
+								'<a href="{user_url}"><img src="{avatar_url}" alt="{screen_name}" title="{screen_name}"></a>',
+							'</span>',
+							'<span class="tweet_info">',
+								'<a href="{user_url}" class="tweet_name">{name}</a>',
+								'<a href="{user_url}" class="tweet_user">@{screen_name}</a>',
+							'</span>',
+						'</span>',
+						'{text}{time}',
+						'<span class="tweet_intents">',
+							'<ul>',
+								'<li><a href="{reply_url}" title="Reply">Reply</a></li>',
+								'<li><a href="{retweet_url}" title="Retweet">Retweet</a></li>',
+								'<li><a href="{favorite_url}" title="Favorite">Favorite</a></li>',
+							'</ul>',
+						'</span>'
+					].join( '' ),
+					count: count,
+					loading_text: 'Loading Tweets...'
+				});
+			});
 		}
 
 	});

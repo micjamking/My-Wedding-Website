@@ -2,16 +2,16 @@ require.config({
 	paths: {
 		jquery: '../components/jquery/jquery',
 		bootstrap: 'vendor/bootstrap/bootstrap',
-		fitvids: '../components/fitvids/jquery.fitvids',
-		isotope: '../components/isotope/jquery.isotope',
-		quovolver: '../components/jquery-quovolver/jquery.quovolver',
-		popup: '../components/magnific-popup/dist/jquery.magnific-popup',
+		//fitvids: '../components/fitvids/jquery.fitvids',
+		//isotope: '../components/isotope/jquery.isotope',
+		//quovolver: '../components/jquery-quovolver/jquery.quovolver',
+		//popup: '../components/magnific-popup/dist/jquery.magnific-popup',
 		form: '../components/jquery-form/jquery.form',
 		validate: '../components/jquery-validation/jquery.validate',
-		recaptcha: 'vendor/recaptcha_ajax',
+		//recaptcha: 'vendor/recaptcha_ajax',
 		gmap3: '../components/gmap3/gmap3',
-		flickr: 'vendor/jquery-flickr/jflickrfeed',
-		tweet: '../components/jquery-tweet/twitter/jquery.tweet',
+		//flickr: 'vendor/jquery-flickr/jflickrfeed',
+		//tweet: '../components/jquery-tweet/twitter/jquery.tweet',
 
 		cycle2Core: '../components/jquery-cycle2/jquery.cycle2.core',
 		cycle2Autoheight: '../components/jquery-cycle2/jquery.cycle2.autoheight',
@@ -34,7 +34,7 @@ require.config({
 			deps: ['jquery'],
 			exports: 'jquery'
 		},
-		fitvids: {
+		/*fitvids: {
 			deps: ['jquery'],
 			exports: 'jquery'
 		},
@@ -49,7 +49,7 @@ require.config({
 		popup: {
 			deps: ['jquery'],
 			exports: 'jquery'
-		},
+		},*/
 		form: {
 			deps: ['jquery'],
 			exports: 'jquery'
@@ -62,14 +62,14 @@ require.config({
 			deps: ['jquery'],
 			exports: 'jquery'
 		},
-		flickr: {
+		/*flickr: {
 			deps: ['jquery'],
 			exports: 'jquery'
 		},
 		tweet: {
 			deps: ['jquery'],
 			exports: 'jquery'
-		},
+		},*/
 		cycle2Core: {
 			deps: ['jquery'],
 			exports: 'jquery'
@@ -127,15 +127,15 @@ require.config({
 				'jquery',
 				'leviatePlugins',
 				'leviateParallax',
-				'fitvids',
+				/*'fitvids',
 				'isotope',
-				'quovolver',
+				'quovolver',*/
 				'form',
 				'validate',
-				'recaptcha',
+				//'recaptcha',
 				'gmap3',
-				'flickr',
-				'tweet',
+				/*'flickr',
+				'tweet',*/
 				'cycle2Core',
 				'cycle2Autoheight',
 				'cycle2Caption',
@@ -158,16 +158,16 @@ require([
 	'modules/app',
 	'jquery',
 	'bootstrap',
-	'fitvids',
+	/*'fitvids',
 	'isotope',
 	'quovolver',
-	'popup',
+	'popup',*/
 	'form',
 	'validate',
-	'recaptcha',
+	//'recaptcha',
 	'gmap3',
-	'flickr',
-	'tweet',
+	//'flickr',
+	//'tweet',
 	'cycle2Core',
 	'cycle2Autoheight',
 	'cycle2Caption',
@@ -183,9 +183,9 @@ require([
 	'leviateParallax',
 	'leviate'
 ],
-function (app, $) {
+function (app) {
 	'use strict';
 
 	app.init();
-	console.log('Running jQuery %s', $().jquery);
+	//console.log('Running jQuery %s', $().jquery);
 });
