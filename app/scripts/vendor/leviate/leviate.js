@@ -146,7 +146,7 @@
 		}
 
 		/* Hacky Slider Height Fix - stupid IE! */
-		if( /*@cc_on!@*/0 ) {
+		if( $('html').hasClass('ie') ) {
 			(function() {
 				function adjustSliderHeight() {
 					$( '.slider-block' ).each(function() {
