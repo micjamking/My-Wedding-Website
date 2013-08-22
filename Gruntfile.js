@@ -53,7 +53,7 @@ module.exports = function (grunt) {
 						return [
 							lrSnippet,
 							mountFolder(connect, '.tmp'),
-							mountFolder(connect, yeomanConfig.dist)
+							mountFolder(connect, yeomanConfig.app)
 						];
 					}
 				}
