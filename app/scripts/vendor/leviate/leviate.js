@@ -408,6 +408,8 @@
 				window.load_gmap = function() {
 					$( '.google-maps' ).each(function() {
 
+						var desktop = $(window).width() > 768 ? true : false;
+
 						var options = {
 							map: {
 								options: {
@@ -415,7 +417,8 @@
 									center: [ $( this ).data( 'center-lat' ), $( this ).data( 'center-lng' ) ],
 									scrollwheel: false,
 									mapTypeControl: false,
-									streetViewControl: false
+									streetViewControl: false,
+									draggable: desktop
 								}
 							},
 							marker: {
@@ -452,7 +455,7 @@
 
 						$( this ).gmap3( options );
 					});
-				}
+				};
 			})();
 		}
 
